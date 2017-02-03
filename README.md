@@ -8,39 +8,53 @@ idea on how to use this.
 Basically this api client use almost same command like in the doc.
 For example:
 
-1. **(in doc) GET /server**
+## Examples
 
-   **(this) api.server.get()**
+* Example 1
 
-2. **(in doc) PUT /server/:server_id/organization/:organization_id**
+  [(in doc)](https://pritunl.com/api.html) `GET /server`
 
-   **(this) api.server.put(srv_id='', org_id='')**
+  (this) `api.server.get()`
 
-3. **(in doc) DELETE /user/:organization_id/:user_id**
+* Example 2
 
-   **(this) api.user.delete(org_id='', usr_id='')**
+  [(in doc)](https://pritunl.com/api.html) `PUT /server/:server_id/organization/:organization_id`
 
-4. **(in doc) POST /server**
+  (this) `api.server.put(srv_id='', org_id='')`
 
-   **(this) api.server.post(data={
-   'name': 'new server name'})**
+* Example 3
+
+  [(in doc)](https://pritunl.com/api.html) `DELETE /user/:organization_id/:user_id`
+
+  (this) `api.user.delete(org_id='', usr_id='')`
+
+* Example 4
+
+  [(in doc)](https://pritunl.com/api.html) `POST /server**`
+
+  (this) `api.server.post(data={
+   'name': 'new server name'})`
 
    \* _If there is data available, you must pass it through data parameter._
 
    \* _Command above works well because there are template available for
    creating a new server._
 
-5. **(in doc) PUT /user/:organization_id/:user_id**
+* Example 5
 
-   **(this) api.user.put(org_id='', usr_id='', data={
+  [(in doc)](https://pritunl.com/api.html) `PUT /user/:organization_id/:user_id`
+
+  (this) `api.user.put(org_id='', usr_id='', data={
    'name': 'modified org name',
-   'disabled': True})**
+   'disabled': True})`
 
 
-This api client is not fully completed. There are some features missing,
+
+***
+This api client is not fully complete. There are some features missing,
 feel free to fork and pull request to add new features.
 
-Tested working on Pritunl 1.26.1188.41.
+Tested working on **Pritunl 1.26.1188.41**.
 
 ### License
 
