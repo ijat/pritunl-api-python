@@ -44,9 +44,9 @@ class Pritunl:
         def get(self, org_id=None, usr_id=None):
             try:
                 if org_id and usr_id:
-                    self.r = self.root.auth_request(method="GET", path="/key/{0}/{1}".format(org_id, usr_id))
+                    self.r = self.root.auth_request(method="GET", path="/key/{0}/{1}.tar".format(org_id, usr_id))
                 if self.r.status_code == 200:
-                    return self.r.json()
+                    return self.r
                 raise PritunlErr(sys._getframe().f_code.co_name)
             except Exception:
                 raise PritunlErr(sys._getframe().f_code.co_name)
@@ -103,9 +103,9 @@ class Pritunl:
             except:
                 raise PritunlErr(sys._getframe().f_code.co_name)
 
-        def delete(self, org_id=None, user_id=None):
+        def delete(self, org_id=None, usr_id=None):
             try:
-                self.r = self.root.auth_request(method="DELETE", path="/user/{0}/{1}".format(org_id, user_id))
+                self.r = self.root.auth_request(method="DELETE", path="/user/{0}/{1}".format(org_id, usr_id))
                 if self.r.status_code == 200:
                     return True
                 else:
