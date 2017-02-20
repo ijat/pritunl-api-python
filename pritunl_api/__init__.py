@@ -47,9 +47,9 @@ class Pritunl:
                     self.r = self.root.auth_request(method="GET", path="/key/{0}/{1}.tar".format(org_id, usr_id))
                 if self.r.status_code == 200:
                     return self.r
-                raise PritunlErr(sys._getframe().f_code.co_name)
+                raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
             except Exception:
-                raise PritunlErr(sys._getframe().f_code.co_name)
+                raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
 
     class UserClass:
         def __init__(self, root):
@@ -67,9 +67,9 @@ class Pritunl:
                 if self.r.status_code == 200:
                     return self.r.json()
                 else:
-                    raise PritunlErr(sys._getframe().f_code.co_name)
+                    raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
             except Exception:
-                raise PritunlErr(sys._getframe().f_code.co_name)
+                raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
 
         def post(self, org_id=None, data=None):
             self.data_template = {
@@ -86,9 +86,9 @@ class Pritunl:
                 if self.r.status_code == 200:
                     return self.r.json()
                 else:
-                    raise PritunlErr(sys._getframe().f_code.co_name)
+                    raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
             except:
-                raise PritunlErr(sys._getframe().f_code.co_name)
+                raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
 
         def put(self, org_id=None, usr_id=None, data=None):
             try:
@@ -99,9 +99,9 @@ class Pritunl:
                 if self.r.status_code == 200:
                     return self.r.json()
                 else:
-                    raise PritunlErr(sys._getframe().f_code.co_name)
+                    raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
             except:
-                raise PritunlErr(sys._getframe().f_code.co_name)
+                raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
 
         def delete(self, org_id=None, usr_id=None):
             try:
@@ -109,10 +109,10 @@ class Pritunl:
                 if self.r.status_code == 200:
                     return True
                 else:
-                    raise PritunlErr(sys._getframe().f_code.co_name)
+                    raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
             except Exception:
                 return False
-                raise PritunlErr(sys._getframe().f_code.co_name)
+                raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
 
     class OrganizationClass:
         def __init__(self, root):
@@ -127,9 +127,9 @@ class Pritunl:
                 if self.r.status_code == 200:
                     return self.r.json()
                 else:
-                    raise PritunlErr(sys._getframe().f_code.co_name)
+                    raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
             except Exception:
-                raise PritunlErr(sys._getframe().f_code.co_name)
+                raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
 
         def post(self, data=None):
             self.headers = {'Content-Type': 'application/json'}
@@ -145,9 +145,9 @@ class Pritunl:
                 if self.r.status_code == 200:
                     return self.r.json()
                 else:
-                    raise PritunlErr(sys._getframe().f_code.co_name)
+                    raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
             except Exception:
-                raise PritunlErr(sys._getframe().f_code.co_name)
+                raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
 
         def put(self, org_id=None, data=None):
             self.headers = {'Content-Type': 'application/json'}
@@ -163,9 +163,9 @@ class Pritunl:
                 if self.r.status_code == 200:
                     return self.r.json()
                 else:
-                    raise PritunlErr(sys._getframe().f_code.co_name)
+                    raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
             except Exception:
-                raise PritunlErr(sys._getframe().f_code.co_name)
+                raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
 
         def delete(self, org_id=None):
             try:
@@ -173,9 +173,9 @@ class Pritunl:
                 if self.r.status_code == 200:
                     return True
                 else:
-                    raise PritunlErr(sys._getframe().f_code.co_name)
+                    raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
             except Exception:
-                raise PritunlErr(sys._getframe().f_code.co_name)
+                raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
 
     class ServerClass:
         def __init__(self, root):
@@ -196,9 +196,9 @@ class Pritunl:
                 if self.r.status_code == 200:
                     return self.r.json()
                 else:
-                    raise PritunlErr(sys._getframe().f_code.co_name)
+                    raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
             except Exception:
-                raise PritunlErr(sys._getframe().f_code.co_name)
+                raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
 
         def delete(self, srv_id=None, org_id=None, out=None):
             try:
@@ -212,9 +212,9 @@ class Pritunl:
                 if self.r.status_code == 200:
                     return True
                 else:
-                    raise PritunlErr(sys._getframe().f_code.co_name)
+                    raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
             except Exception:
-                raise PritunlErr(sys._getframe().f_code.co_name)
+                raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
 
         def put(self, srv_id=None, operation=None, org_id=None, data=None):
             self.header = {'Content-Type': 'application/json'}
@@ -233,9 +233,9 @@ class Pritunl:
                 if self.r.status_code == 200:
                     return self.r.json()
                 else:
-                    raise PritunlErr(sys._getframe().f_code.co_name)
+                    raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
             except:
-                raise PritunlErr(sys._getframe().f_code.co_name)
+                raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
 
         def post(self, data=None):
             self.data_template = {
@@ -283,9 +283,9 @@ class Pritunl:
                 if self.r.status_code == 200:
                     return self.r.json()
                 else:
-                    raise PritunlErr(sys._getframe().f_code.co_name)
+                    raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
             except:
-                raise PritunlErr(sys._getframe().f_code.co_name)
+                raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
 
     def test(self):
         pass
@@ -296,9 +296,9 @@ class Pritunl:
             if self.r.status_code == 200:
                 return True
             else:
-                raise PritunlErr(sys._getframe().f_code.co_name)
+                raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
         except Exception:
-            raise PritunlErr(sys._getframe().f_code.co_name)
+            raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
 
     def check(self):
         try:
@@ -306,9 +306,9 @@ class Pritunl:
             if self.r.status_code == 200:
                 return True
             else:
-                raise PritunlErr(sys._getframe().f_code.co_name)
+                raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
         except Exception:
-            raise PritunlErr(sys._getframe().f_code.co_name)
+            raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
 
     def setting(self):
         try:
@@ -316,9 +316,9 @@ class Pritunl:
             if self.r.status_code == 200:
                 return self.r.json()
             else:
-                raise PritunlErr(sys._getframe().f_code.co_name)
+                raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
         except Exception:
-            raise PritunlErr(sys._getframe().f_code.co_name)
+            raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
 
     def lastResponse(self):
         return self.r.json()
