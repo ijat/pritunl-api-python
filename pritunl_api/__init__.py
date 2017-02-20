@@ -346,6 +346,6 @@ class Pritunl:
             verify=False,
             headers=auth_headers,
             data=data,
-            timeout=10
+            timeout=30
         )
 
