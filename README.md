@@ -55,7 +55,3 @@ This api client is not fully complete. There are some features missing,
 feel free to fork and pull request to add new features.
 
 Tested working on **Pritunl 1.26.1188.41**.
-
-### License
-
-This api client is under GPLv3. please view LICENSE file for more info.
