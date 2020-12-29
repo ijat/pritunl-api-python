@@ -1,11 +1,6 @@
 #!/bin/bash
 
-from pritunl_api import *
-
-pri = Pritunl(url="https://yoursite.com",
-              token="###",
-              secret="###")
-
+from config import pri as pri
 
 # Ping host
 if pri.ping():
