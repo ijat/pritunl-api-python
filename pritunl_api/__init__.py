@@ -78,17 +78,18 @@ class Pritunl:
                 'disabled': False,
             }
             self.data_template.update(data)
-            try:
-                self.headers = {'Content-Type': 'application/json'}
-                self.r = self.root.auth_request(method="POST", path="/user/{0}".format(org_id),
+            #try:
+            self.headers = {'Content-Type': 'application/json'}
+            self.r = self.root.auth_request(method="POST", path="/user/{0}".format(org_id),
                                                 headers=self.headers,
                                                 data=json.dumps(self.data_template))
-                if self.r.status_code == 200:
-                    return self.r.json()
-                else:
-                    raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
-            except:
-                raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
+            if self.r.status_code == 200:
+                return self.r.json()
+            else:
+                print(self.r.status_code)
+           #         raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
+           # except:
+           #     raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
 
         def put(self, org_id=None, usr_id=None, data=None):
             try:
@@ -122,14 +123,15 @@ class Pritunl:
             self.root = root
 
         def get(self):
-            try:
-                self.r = self.root.auth_request(method="GET", path="/organization")
-                if self.r.status_code == 200:
-                    return self.r.json()
-                else:
-                    raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
-            except Exception:
-                raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
+            #try:
+            self.r = self.root.auth_request(method="GET", path="/organization")
+            if self.r.status_code == 200:
+                return self.r.json()
+            else:
+                print(self.r.status_code)
+            #    raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
+            #except Exception:
+                #raise PritunlErr("{0}:{1}".format(sys._getframe().f_code.co_name, self.root.BASE_URL))
 
         def post(self, data=None):
             self.headers = {'Content-Type': 'application/json'}
@@ -327,9 +329,11 @@ class Pritunl:
         auth_timestamp = str(int(time.time()))
         auth_nonce = uuid.uuid4().hex
         auth_string = '&'.join([self.API_TOKEN, auth_timestamp, auth_nonce,
-                                method.upper(), path] + ([data] if data else []))
+                                method.upper(), path])
 
         hmacv = hmac.new(str.encode(self.API_SECRET), auth_string.encode('utf-8'), hashlib.sha256).digest()
+        if data:
+            auth_string = auth_string + "&" + str([data])
 
         auth_signature = base64.b64encode(hmacv)
         auth_headers = {
