@@ -49,6 +49,15 @@ For example:
    'disabled': True})`
 
 
+## Installation
+
+```sh
+export GITHUB_HANDLER = "<maintainer username>"
+pip install git+https://github.com/${GITHUB_HANDLER}/pritunl-api-python.git@master#egg=pritunl-api
+
+```
+### TODO 
+To be replaced with simple `pip install pritunl-api` if the the main author published it to PyPi.
 
 ***
 This api client is not fully complete. There are some features missing,
