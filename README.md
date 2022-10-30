@@ -1,3 +1,5 @@
+WARNING: This project no longer maintained since I'm not using the product anymore. Feel free to fork this repo, or take a look at other forks. :)
+
 # Pritunl API client for Python 3
 
 This is a simple api client written in Python 3. View example in
