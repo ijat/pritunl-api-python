@@ -1,5 +1,9 @@
 WARNING: This project no longer maintained since I'm not using the product anymore. Feel free to fork this repo, or take a look at other forks. :)
 
+Currently active fork (as of Nov 2022):
+
+[https://github.com/nathanielvarona/pritunl-api-python/releases](https://github.com/nathanielvarona/pritunl-api-python/releases)
+
 # Pritunl API client for Python 3
 
 This is a simple api client written in Python 3. View example in
