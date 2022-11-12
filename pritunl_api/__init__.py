@@ -327,7 +327,7 @@ class Pritunl:
         auth_timestamp = str(int(time.time()))
         auth_nonce = uuid.uuid4().hex
         auth_string = '&'.join([self.API_TOKEN, auth_timestamp, auth_nonce,
-                                method.upper(), path] + ([data] if data else []))
+                                method.upper(), path])
 
         hmacv = hmac.new(str.encode(self.API_SECRET), auth_string.encode('utf-8'), hashlib.sha256).digest()
 
